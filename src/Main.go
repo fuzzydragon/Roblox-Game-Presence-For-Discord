@@ -13,6 +13,7 @@ import (
 
 var (
 	placeId string
+	reset = false
 )
 
 type MarketPlaceInfo struct { // https://mholt.github.io/json-to-go/
@@ -59,7 +60,22 @@ func UpdateRobloxPresence() {
 
 	for (roblox == nil) {
 		roblox = GetProcessByName("RobloxPlayerBeta.exe")
+
+		if (reset == false) {
+			reset = true
+
+			client.Logout()
+			fmt.Println("reset client activity")
+		}
 	}
+
+	err := client.Login("823294557155754005")
+
+	if (err != nil) {
+		fmt.Println(err)
+	}
+
+	reset = false
 
 	args, _ := roblox.Cmdline()
 
@@ -99,11 +115,9 @@ func UpdateRobloxPresence() {
 }
 
 func main() {
-	client.Login("823294557155754005")
-
 	for (true) {
 		UpdateRobloxPresence()
 
-		time.Sleep(time.Second * 10)
+		time.Sleep(time.Second * 5)
 	}
 }
