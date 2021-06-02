@@ -1,7 +1,7 @@
 # Roblox-Game-Presence-For-Discord
 Uses Discord RPC to give you a rich presence on discord for the current ROBLOX game you are playing.
 
-![example](https://doy2mn9upadnk.cloudfront.net/uploads/default/original/4X/d/5/7/d57e244c276ffde1f968185e2ac8eff0305ba9c6.png)
+![image](https://user-images.githubusercontent.com/79267815/120475425-f50cae80-c36e-11eb-8e06-dba871fb7d4f.png)
 
 
 This is an alternative to "ro-presence". _Why?_ Because ro-presence goes overboard by reading from your registry so that it can get your `.ROBLOSECURITY` cookie to function. 
